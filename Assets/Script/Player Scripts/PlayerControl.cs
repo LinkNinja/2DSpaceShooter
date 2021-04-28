@@ -8,19 +8,32 @@ public class PlayerControl : MonoBehaviour
     public float speed = 5f;
     public float minY, maxY;
 
+    public float attackTimer = 0.35f;
+
+    private float currentAttackTimer;
+
+    private bool canAttack;
+
+    [SerializeField]
+    private GameObject playerBullet;
+
+
+    [SerializeField]
+    private Transform attackPoint;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentAttackTimer = attackTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
         MovePlayer();
+        Attack();
     }
 
 
@@ -53,6 +66,37 @@ public class PlayerControl : MonoBehaviour
         }
 
     }
+
+    void Attack()
+    {
+
+        //here is where we attack and where we are using a timer to restrict the attack timer.
+        //Could be upgraded to be used with power ups later on.
+        attackTimer += Time.deltaTime;
+        if(attackTimer > currentAttackTimer)
+        {
+            canAttack = true;
+        }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            if(canAttack)
+            {
+                canAttack = false;
+                attackTimer = 0f;
+
+                Instantiate(playerBullet, attackPoint.position, Quaternion.identity);
+                
+
+                //play shooting sound fx
+
+            }
+        }
+
+
+    }
+
+
+
 
 } //class
 

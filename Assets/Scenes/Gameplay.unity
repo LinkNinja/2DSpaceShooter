@@ -324,16 +324,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
-    - target: {fileID: 7399954724890180685, guid: 7ea461eee0095484ab98197ebb9d26c0,
-        type: 3}
-      propertyPath: maxY
-      value: 4.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7399954724890180685, guid: 7ea461eee0095484ab98197ebb9d26c0,
-        type: 3}
-      propertyPath: minY
-      value: -4.3
-      objectReference: {fileID: 0}
     - target: {fileID: 7620277240947879767, guid: 7ea461eee0095484ab98197ebb9d26c0,
         type: 3}
       propertyPath: m_RootOrder
