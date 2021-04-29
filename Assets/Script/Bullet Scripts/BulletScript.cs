@@ -9,10 +9,23 @@ public class BulletScript : MonoBehaviour
     public float deactivateTimer = 3f;
 
 
+    [HideInInspector]
+    public bool isEnemyBullet = false;
+
     
     void Start()
     {
+        //test if enemy bullet
+        if (isEnemyBullet)
+            speed *= -1f;
+
+
+
         Invoke("DeactivateGameObject", deactivateTimer);
+
+
+        
+        
     }
 
 
@@ -44,6 +57,20 @@ public class BulletScript : MonoBehaviour
 
         //Destroy the object. Find out if you should use both, or if one is better than the other. why not just use destroy all the time?. the bullets not coming back right?
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        
+        if(target.tag == "Bullet" || target.tag == "Enemy")
+        {
+            gameObject.SetActive(false);
+        }
+
+        
+
+
+
     }
 
 }//class

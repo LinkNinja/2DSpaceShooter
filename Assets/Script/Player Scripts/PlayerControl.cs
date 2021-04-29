@@ -21,7 +21,16 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private Transform attackPoint;
 
+    private AudioSource laserAudio;
 
+
+    void Awake()
+    {
+
+        laserAudio = GetComponent<AudioSource>();
+
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -85,9 +94,13 @@ public class PlayerControl : MonoBehaviour
                 attackTimer = 0f;
 
                 Instantiate(playerBullet, attackPoint.position, Quaternion.identity);
-                
+
 
                 //play shooting sound fx
+
+                laserAudio.Play();
+
+
 
             }
         }
