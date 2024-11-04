@@ -607,13 +607,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><size=70>SPACE WARS</size></align>\n<align=center><size=40>The
-    Last N-1</size></align>\n\nThe war is almost at an end. Word has come in that
-    General Benobi has engaged General Greeves of the Sales Federation on Utapank.
-    \n\nAbove the planet of Nabii a desperate push by the Sales Federation is taking
-    place. Efal Lito, a Nabii pilot is fighting to defend his home with a detachment
-    of soldiers.\n\r\nJust as the final shots are taken in the war, a transmission
-    comes in from Chancellor Palpatine...."
+  m_text: '<align=center><size=70>SPACE WARS</size></align>
+
+    <align=center><size=40>The
+    Last Hope of Atreus</size></align>
+
+
+    After three centuries of war, the Conflict
+    of Federations is finally at an end. The Principality of Atreus and The Great
+    Emperium have both agreed to a peace treaty.
+
+
+    However, the Emperium has
+    devised a sinister trap to cut of the capital world of Atreus from the rest of
+    the galaxy and force them into submission.
+
+
+    Above the planet of Atreus a
+    Rookie pilot take his first flight on patrol...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
