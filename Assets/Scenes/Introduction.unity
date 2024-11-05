@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<align=center><size=70>SPACE WARS</size></align>
+  m_text: '<align=center><size=70>SPACE WAR</size></align>
 
     <align=center><size=40>The
     Last Hope of Atreus</size></align>
