@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, transform.rotation); // Create the explosion
         Destroy(gameObject);
       
-        // Notify wave manager (or similar) that the enemy has been destroyed
+        // Notify wave manager that the enemy has been destroyed
         WaveSystem waveSystem = FindObjectOfType<WaveSystem>();
         if (waveSystem != null)
         {
