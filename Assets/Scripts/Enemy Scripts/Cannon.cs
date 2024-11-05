@@ -21,7 +21,7 @@ public class Cannon : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("PlayerBullet"))
         {
             Player_Projectile bullet = other.GetComponent<Player_Projectile>();
             if (bullet != null)

@@ -10,7 +10,7 @@ public class EnemyDropFragments : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("PlayerBullet"))
         {
             killedByPlayer = true; // BUG**** When the enemy move off screen and is killed it still drops the fragment if the player hits them just once.
             Destroy(other.gameObject); // Destroy the player's bullet
