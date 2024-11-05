@@ -18,10 +18,10 @@ public class PlayerControls_V2 : MonoBehaviour
     public int currentShield;
     public Slider shieldbar;
     public int originalDamage = 10;
-    public GameObject explosionPrefab; // Reference to the explosion prefab
+    public GameObject explosionPrefab; 
     private ModuleManager moduleManager;
     private CombinedModules combinedModules;
-    private GameManager gameManager; // Reference to the GameManager
+    private GameManager gameManager; 
     public ObjectScaler objectScaler;
     public GameObject player;
 
@@ -107,7 +107,15 @@ public class PlayerControls_V2 : MonoBehaviour
                 TakeDamage(enemy.collisionDamage); // Apply damage to player
                 if (enemy.canBeDestroyedOnCollision)
                 {
+
+                    //Need to notify the wave system that the enemy has been destroyed from crashing into the player.
                     Destroy(other.gameObject); // Destroy the enemy
+                    // Notify wave manager that the enemy has been destroyed
+                    WaveSystem waveSystem = FindObjectOfType<WaveSystem>();
+                    if (waveSystem != null)
+                    {
+                        waveSystem.NotifyEnemyDestroyed(other.gameObject);
+                    }
                     FindObjectOfType<AudioManager>().Play("PlayerHit");
                 }
             }
