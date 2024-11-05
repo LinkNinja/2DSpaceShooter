@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         gameOverScreenUI.SetActive(false); // Ensure the Game Over screen is initially hidden
     }
 
-    void Update()
+    void FixedUpdate()
     {
       
         if (playerLives <= 0)
