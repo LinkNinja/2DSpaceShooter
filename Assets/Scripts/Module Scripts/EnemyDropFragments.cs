@@ -6,8 +6,9 @@ public class EnemyDropFragments : MonoBehaviour
     public FragmentType fragmentType;
     public GameObject fragmentPrefab; // Prefab of the fragment to drop
 
-    private bool killedByPlayer = false;
+    //private bool killedByPlayer = false;
 
+    /*
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerBullet"))
@@ -32,8 +33,9 @@ public class EnemyDropFragments : MonoBehaviour
     {
         Debug.Log("Killed by Player");
     }
+    */
 
-    void DropFragment()
+    public void DropFragment()
     {
         Instantiate(fragmentPrefab, transform.position, Quaternion.identity);
     }

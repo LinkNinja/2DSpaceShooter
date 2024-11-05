@@ -386,7 +386,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173886529}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ef669132335e8d248a35ea07e18464bb, type: 3}
@@ -7403,6 +7403,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
+      type: 3}
+    enemyCount: 5
+    spawnRate: 2
+    spawnPoint: {fileID: 645536291}
+  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
+      type: 3}
+    enemyCount: 5
+    spawnRate: 2
+    spawnPoint: {fileID: 1566638893}
+  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
+      type: 3}
+    enemyCount: 5
+    spawnRate: 2
+    spawnPoint: {fileID: 1377687345}
+  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
+      type: 3}
+    enemyCount: 5
+    spawnRate: 2
+    spawnPoint: {fileID: 1566638893}
   - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
       type: 3}
     enemyCount: 5

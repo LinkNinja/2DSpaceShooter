@@ -78,7 +78,7 @@ public class UpdatedBoss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (canTakeDamage && other.CompareTag("Bullet"))
+        if (canTakeDamage && other.CompareTag("PlayerBullet"))
         {
             Player_Projectile bullet = other.GetComponent<Player_Projectile>();
             if (bullet != null)

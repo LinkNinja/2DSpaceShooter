@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int collisionDamage = 20;
     public GameObject explosionPrefab; // Reference to the explosion prefab
     public int scoreValue = 100; // Points for destroying enemy.
+    public EnemyDropFragments enemyDropFragments;
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -24,10 +25,12 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log(damage);
         health -= damage;
         if (health <= 0)
         {
             DestroyEnemy();
+            enemyDropFragments.DropFragment();
         }
     }
 

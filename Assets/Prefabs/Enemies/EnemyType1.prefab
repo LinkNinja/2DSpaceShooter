@@ -302,13 +302,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b80b01483eb7141bd9673ed931951e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 10
   canBeDestroyedOnCollision: 1
   collisionDamage: 5
   explosionPrefab: {fileID: 2632983710684232460, guid: d1ebbe24e1c8f50499e8480e6302264c,
     type: 3}
   scoreValue: 100
-  isDestroyed: 0
+  enemyDropFragments: {fileID: 6946564589153306763}
 --- !u!114 &6946564589153306763
 MonoBehaviour:
   m_ObjectHideFlags: 0

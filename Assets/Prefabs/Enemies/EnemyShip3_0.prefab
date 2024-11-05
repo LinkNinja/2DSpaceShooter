@@ -126,6 +126,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 2632983710684232460, guid: d1ebbe24e1c8f50499e8480e6302264c,
     type: 3}
   scoreValue: 100
+  enemyDropFragments: {fileID: 7457944280477702666}
 --- !u!114 &7457944280477702666
 MonoBehaviour:
   m_ObjectHideFlags: 0
