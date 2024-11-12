@@ -11,6 +11,7 @@ public class WaveSystem : MonoBehaviour
         public int enemyCount;
         public float spawnRate;
         public Transform spawnPoint;
+   
     }
 
     public Wave[] waves;
@@ -27,6 +28,8 @@ public class WaveSystem : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartDialogue());
+        
+
     }
 
     void Update()
@@ -49,11 +52,14 @@ public class WaveSystem : MonoBehaviour
 
     IEnumerator SpawnWave(Wave wave)
     {
+        objectScaler.AdjustObjectPosition(wave.spawnPoint);
+
         for (int i = 0; i < wave.enemyCount; i++)
         {
+            
             GameObject enemy = Instantiate(wave.enemyPrefab, wave.spawnPoint.position, wave.spawnPoint.rotation);
-            objectScaler.AdjustObjectPosition(enemy.transform);
-            objectScaler.AdjustObjectSize(enemy);
+            //objectScaler.AdjustObjectPosition(wave.spawnPoint);
+            //objectScaler.AdjustObjectSize(enemy);
             activeEnemies.Add(enemy);
             yield return new WaitForSeconds(1f / wave.spawnRate);
         }
