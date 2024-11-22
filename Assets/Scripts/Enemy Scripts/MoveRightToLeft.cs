@@ -31,7 +31,14 @@ public class MoveRightToLeft : MonoBehaviour
 
         if(pos.x < -10)
         {
-            Destroy(gameObject);
+            // Notify wave manager that enemy has been destroyed
+            WaveSystem waveSystem = FindObjectOfType<WaveSystem>();
+            if (waveSystem != null)
+            {
+                Destroy(gameObject);
+                waveSystem.NotifyEnemyDestroyed(gameObject);
+            }
+            
         }
         transform.position = pos;
     }

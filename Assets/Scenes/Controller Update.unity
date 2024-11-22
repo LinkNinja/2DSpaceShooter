@@ -386,12 +386,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173886529}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ef669132335e8d248a35ea07e18464bb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6634,7 +6634,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7413,21 +7413,6 @@ MonoBehaviour:
     enemyCount: 5
     spawnRate: 2
     spawnPoint: {fileID: 1566638893}
-  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
-      type: 3}
-    enemyCount: 5
-    spawnRate: 2
-    spawnPoint: {fileID: 1377687345}
-  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
-      type: 3}
-    enemyCount: 5
-    spawnRate: 2
-    spawnPoint: {fileID: 1566638893}
-  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
-      type: 3}
-    enemyCount: 5
-    spawnRate: 2
-    spawnPoint: {fileID: 645536291}
   bossSpawnPoint: {fileID: 4653900}
   bossPrefab: {fileID: 3929679812551104463, guid: 25e714785a2120e4ebd12bfcd364eea9,
     type: 3}
@@ -7843,7 +7828,7 @@ PrefabInstance:
     - target: {fileID: 3478709276630041516, guid: 80125eb99f8a554419f72dcc1cf1acac,
         type: 3}
       propertyPath: sounds.Array.data[8].volume
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3478709276630041517, guid: 80125eb99f8a554419f72dcc1cf1acac,
         type: 3}

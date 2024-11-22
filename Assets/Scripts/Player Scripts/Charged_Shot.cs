@@ -22,7 +22,8 @@ public class Charged_Shot : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject); // Destroy the enemy
+            // Destroy the enemy
+            //Destroy(other.gameObject); 
         }
     }
 

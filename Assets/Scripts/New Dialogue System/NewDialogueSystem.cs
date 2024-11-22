@@ -10,6 +10,7 @@ public class NewDialogueSystem : MonoBehaviour
     public AudioClip typingSound;
     public float typingSpeed = 0.02f;
     private AudioSource audioSource;
+    private GameManager gameManager;
 
     [System.Serializable]
     public class DialogueLine
@@ -25,8 +26,11 @@ public class NewDialogueSystem : MonoBehaviour
         public GameObject portraitObject;
     }
 
-    public List<DialogueLine> startDialogueLines;  // Store initial dialogue lines
-    public List<DialogueLine> bossDialogueLines;   // Store boss dialogue lines
+
+    // Store initial dialogue lines
+    public List<DialogueLine> startDialogueLines;
+       // Store boss dialogue lines
+    public List<DialogueLine> bossDialogueLines;
 
     // Add this line to declare the dialogueLines list
     private List<DialogueLine> dialogueLines;
@@ -36,6 +40,7 @@ public class NewDialogueSystem : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        gameManager = FindObjectOfType<GameManager>();
         foreach (var character in characters)
         {
             character.portraitObject.SetActive(false);
@@ -48,6 +53,9 @@ public class NewDialogueSystem : MonoBehaviour
         currentLineIndex = 0;
         DisplayNextLine();
     }
+
+
+
 
     public void DisplayNextLine()
     {
@@ -76,6 +84,7 @@ public class NewDialogueSystem : MonoBehaviour
             dialogueText.text += letter;
             audioSource.PlayOneShot(typingSound);
             yield return new WaitForSecondsRealtime(typingSpeed);
+;
         }
         yield return new WaitForSecondsRealtime(2f);
         characters[characterIndex].portraitObject.SetActive(false);
@@ -84,7 +93,8 @@ public class NewDialogueSystem : MonoBehaviour
 
     public void TriggerDialogueAtStart()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+        gameManager.PauseGame();
         StartDialogue(startDialogueLines);
     }
 

@@ -27,10 +27,12 @@ public class ShipGun : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
+        //stop the player from shooting if the game is paused
         if (gameManager.currentState == GameManager.GameState.Paused)
         {
             return;
         }
+        //stop the player from shooting if the game is over
         if (gameManager.currentState == GameManager.GameState.GameOver)
         {
             return;

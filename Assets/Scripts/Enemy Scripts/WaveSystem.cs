@@ -67,6 +67,7 @@ public class WaveSystem : MonoBehaviour
         {
             // Debug.Log("All waves completed!");
             StartCoroutine(SpawnBoss());
+            
         }
     }
 
@@ -74,8 +75,10 @@ public class WaveSystem : MonoBehaviour
     {
         dialogueSystem.TriggerDialogueAtBoss();
         GameObject boss = Instantiate(bossPrefab, bossSpawnPoint.position, bossSpawnPoint.rotation);
-        objectScaler.AdjustObjectPosition(boss.transform); // Adjust boss position
-        objectScaler.AdjustObjectSize(boss); // Adjust boss size
+        // Adjust boss position
+        objectScaler.AdjustObjectPosition(boss.transform);
+        // Adjust boss size
+        objectScaler.AdjustObjectSize(boss);
         activeEnemies.Add(boss);
         yield return new WaitUntil(() => activeEnemies.Count == 0);
         Debug.Log("Boss defeated!");
