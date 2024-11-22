@@ -21,6 +21,11 @@ public class Enemy : MonoBehaviour
                 Destroy(other.gameObject); // Destroy the bullet on impact
             }
         }
+
+        if (other.CompareTag("ChargedBullet"))
+        {
+            DestroyEnemy();
+        }
     }
 
     public void TakeDamage(int damage)
