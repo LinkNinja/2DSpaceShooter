@@ -74,7 +74,8 @@ public class NewDialogueSystem : MonoBehaviour
         foreach (char letter in dialogue.ToCharArray())
         {
             dialogueText.text += letter;
-            audioSource.PlayOneShot(typingSound);
+            FindObjectOfType<AudioManager>().Play("DialogueSound");
+            //audioSource.PlayOneShot(typingSound);
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
         yield return new WaitForSecondsRealtime(2f);

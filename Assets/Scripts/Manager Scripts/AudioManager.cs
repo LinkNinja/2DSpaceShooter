@@ -25,6 +25,9 @@ public class AudioManager : MonoBehaviour
 
         
 
+
+        //
+        //In this for loop you can Add additional properties of the audio source if needed. Such as priority, stereo pan, etc.
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -32,6 +35,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+
 
         }
 
@@ -47,6 +51,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
             
-        s.source.Play();
+        //Not sure if I should use Oneshot or just play.
+        //s.source.Play();
+        s.source.PlayOneShot(s.source.clip);
     }
 }
