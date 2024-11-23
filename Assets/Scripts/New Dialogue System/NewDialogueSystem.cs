@@ -7,7 +7,7 @@ public class NewDialogueSystem : MonoBehaviour
 {
     public TMP_Text dialogueText;
     public List<CharacterDialogueData> characters;
-    public AudioClip typingSound;
+    //public AudioClip typingSound;
     public float typingSpeed = 0.02f;
     private AudioSource audioSource;
 
