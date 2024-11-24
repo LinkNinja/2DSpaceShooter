@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 18793b05c31eeb741a954f5b1c0fff7d
+guid: f74db81f2d66c7f44aa3cd6376fb5969
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4008958449415446368
-    second: Space Ship - Yellow Damage_0
+      213: 6222891693578269615
+    second: FinalBossCharging_0
   - first:
-      213: 1902620155969073212
-    second: Space Ship - Yellow Damage_1
+      213: 3842459763867957108
+    second: FinalBossCharging_1
   - first:
-      213: -4812853948005745985
-    second: Space Ship - Yellow Damage_2
+      213: 5769292230871330431
+    second: FinalBossCharging_2
+  - first:
+      213: 3067971949538189086
+    second: FinalBossCharging_3
+  - first:
+      213: -8935733699956626790
+    second: FinalBossCharging_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -132,7 +138,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Space Ship - Yellow Damage_0
+      name: FinalBossCharging_0
       rect:
         serializedVersion: 2
         x: 0
@@ -146,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06f55b8287ea2a730800000000000000
-      internalID: 4008958449415446368
+      spriteID: fa3367766072c5650800000000000000
+      internalID: 6222891693578269615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Ship - Yellow Damage_1
+      name: FinalBossCharging_1
       rect:
         serializedVersion: 2
         x: 64
@@ -167,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c30f80b83f6776a10800000000000000
-      internalID: 1902620155969073212
+      spriteID: 477b4190cc8235530800000000000000
+      internalID: 3842459763867957108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Ship - Yellow Damage_2
+      name: FinalBossCharging_2
       rect:
         serializedVersion: 2
         x: 128
@@ -188,8 +194,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbaf74975de453db0800000000000000
-      internalID: -4812853948005745985
+      spriteID: f7ea18a87b4a01050800000000000000
+      internalID: 5769292230871330431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalBossCharging_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f1619bb30a39a20800000000000000
+      internalID: 3067971949538189086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalBossCharging_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a299e1b85edf380800000000000000
+      internalID: -8935733699956626790
       vertices: []
       indices: 
       edges: []
