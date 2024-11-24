@@ -21,10 +21,6 @@ public class PauseManager : MonoBehaviour
                 // Do not allow pausing when the game is over
                 return;
             }
-            if(gameManager.currentState == GameManager.GameState.Paused)
-            {
-                return;
-            }
 
             if (isPaused)
             {
