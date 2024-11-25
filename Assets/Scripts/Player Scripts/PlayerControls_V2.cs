@@ -24,6 +24,7 @@ public class PlayerControls_V2 : MonoBehaviour
     private GameManager gameManager; 
     public ObjectScaler objectScaler;
     public GameObject player;
+    public Animator animator;
 
     void Start()
     {
@@ -40,7 +41,8 @@ public class PlayerControls_V2 : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         objectScaler.AdjustObjectPosition(transform);
         objectScaler.AdjustObjectSize(player);
-
+        // Initialize the Animator component
+        animator = GetComponent<Animator>(); 
     }
 
     private void FixedUpdate()
@@ -127,6 +129,7 @@ public class PlayerControls_V2 : MonoBehaviour
         currentShield -= damage;
         shieldbar.value = currentShield;
         FindObjectOfType<AudioManager>().Play("PlayerHit");
+        animator.SetTrigger("TakeDamage"); // Trigger the damage animation
 
         if (currentShield <= 0)
         {

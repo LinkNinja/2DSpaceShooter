@@ -1082,6 +1082,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7458387742982456167}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &291989633
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291989632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b008513833bb5843bbb50e4c3aa3458, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &344193629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7918,6 +7937,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 291989632}
+    - target: {fileID: 4619601076123092197, guid: a19052767a1d08342badbd05d968cdee,
+        type: 3}
+      propertyPath: maxShield
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4619601076123092197, guid: a19052767a1d08342badbd05d968cdee,
         type: 3}
       propertyPath: shieldbar
