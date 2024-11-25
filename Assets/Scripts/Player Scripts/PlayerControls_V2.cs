@@ -129,7 +129,8 @@ public class PlayerControls_V2 : MonoBehaviour
         currentShield -= damage;
         shieldbar.value = currentShield;
         FindObjectOfType<AudioManager>().Play("PlayerHit");
-        animator.SetTrigger("TakeDamage"); // Trigger the damage animation
+        // Trigger the damage animation
+        animator.SetTrigger("TakeDamage"); 
 
         if (currentShield <= 0)
         {
