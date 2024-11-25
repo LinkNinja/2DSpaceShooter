@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3929679812551104457}
   - component: {fileID: 3929679812551104456}
   - component: {fileID: 3929679812551103540}
+  - component: {fileID: 1263567134}
   m_Layer: 0
   m_Name: BossPlaceHolder
   m_TagString: Untagged
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76529ec4f0bb6914da52690d7ccc86fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   laserPrefab: {fileID: 8898274298469547313, guid: e2e0bbbc6f84bf5418b07d80ce9bcdef,
     type: 3}
   laserSpawnPoint: {fileID: 3929679813026895246}
@@ -178,8 +179,26 @@ MonoBehaviour:
   - {fileID: 3929679813310320103}
   - {fileID: 3929679813113113845}
   moveSpeed: 2
-  levelTransition: {fileID: 7986773168298677628, guid: 7890e0e019c5a58418870b7045145954,
-    type: 3}
+  animator: {fileID: 0}
+--- !u!95 &1263567134
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929679812551104463}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f0726a71b62f6449beff40ed7da0157, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3929679812943415829
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +212,7 @@ GameObject:
   - component: {fileID: 3929679812943415825}
   - component: {fileID: 3929679812943415824}
   - component: {fileID: 3929679812943415827}
+  - component: {fileID: 759623935}
   m_Layer: 0
   m_Name: Cannon1
   m_TagString: Untagged
@@ -314,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82aa4bd5417e1d74189d08f0aea7625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   boss: {fileID: 3929679812551103540}
   projectilePrefab: {fileID: 8898274298469547313, guid: e2e0bbbc6f84bf5418b07d80ce9bcdef,
     type: 3}
@@ -322,6 +342,26 @@ MonoBehaviour:
   fireRate: 0.5
   explosionPrefab: {fileID: 2632983710684232460, guid: d1ebbe24e1c8f50499e8480e6302264c,
     type: 3}
+  animator: {fileID: 0}
+--- !u!95 &759623935
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929679812943415829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c1bd69ed3fa30849900372d3a0e48ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3929679813026895245
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +405,7 @@ GameObject:
   - component: {fileID: 3929679813113113847}
   - component: {fileID: 3929679813113113846}
   - component: {fileID: 3929679813113113845}
+  - component: {fileID: 343494123}
   m_Layer: 0
   m_Name: Cannon4
   m_TagString: Untagged
@@ -486,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82aa4bd5417e1d74189d08f0aea7625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   boss: {fileID: 3929679812551103540}
   projectilePrefab: {fileID: 8898274298469547313, guid: e2e0bbbc6f84bf5418b07d80ce9bcdef,
     type: 3}
@@ -494,6 +535,26 @@ MonoBehaviour:
   fireRate: 0.5
   explosionPrefab: {fileID: 2632983710684232460, guid: d1ebbe24e1c8f50499e8480e6302264c,
     type: 3}
+  animator: {fileID: 0}
+--- !u!95 &343494123
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929679813113113739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c1bd69ed3fa30849900372d3a0e48ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3929679813310320101
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +568,7 @@ GameObject:
   - component: {fileID: 3929679813310320097}
   - component: {fileID: 3929679813310320096}
   - component: {fileID: 3929679813310320103}
+  - component: {fileID: 1605487471}
   m_Layer: 0
   m_Name: Cannon3
   m_TagString: Untagged
@@ -628,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82aa4bd5417e1d74189d08f0aea7625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   boss: {fileID: 3929679812551103540}
   projectilePrefab: {fileID: 8898274298469547313, guid: e2e0bbbc6f84bf5418b07d80ce9bcdef,
     type: 3}
@@ -636,6 +698,26 @@ MonoBehaviour:
   fireRate: 0.5
   explosionPrefab: {fileID: 2632983710684232460, guid: d1ebbe24e1c8f50499e8480e6302264c,
     type: 3}
+  animator: {fileID: 0}
+--- !u!95 &1605487471
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929679813310320101}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c1bd69ed3fa30849900372d3a0e48ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3929679813514727017
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +731,7 @@ GameObject:
   - component: {fileID: 3929679813514726997}
   - component: {fileID: 3929679813514726996}
   - component: {fileID: 3929679813514727019}
+  - component: {fileID: 266887049}
   m_Layer: 0
   m_Name: Cannon2
   m_TagString: Untagged
@@ -770,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82aa4bd5417e1d74189d08f0aea7625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   boss: {fileID: 3929679812551103540}
   projectilePrefab: {fileID: 8898274298469547313, guid: e2e0bbbc6f84bf5418b07d80ce9bcdef,
     type: 3}
@@ -778,6 +861,26 @@ MonoBehaviour:
   fireRate: 0.5
   explosionPrefab: {fileID: 2632983710684232460, guid: d1ebbe24e1c8f50499e8480e6302264c,
     type: 3}
+  animator: {fileID: 0}
+--- !u!95 &266887049
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929679813514727017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c1bd69ed3fa30849900372d3a0e48ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5698427450945717789
 GameObject:
   m_ObjectHideFlags: 0

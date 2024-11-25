@@ -23,7 +23,7 @@ public class WaveSystem : MonoBehaviour
     private List<GameObject> activeEnemies = new List<GameObject>();
     public NewDialogueSystem dialogueSystem;
     public LevelChanger nextLevel;
-    public ObjectScaler objectScaler;
+    //public ObjectScaler objectScaler;
 
     void Start()
     {
@@ -52,7 +52,7 @@ public class WaveSystem : MonoBehaviour
 
     IEnumerator SpawnWave(Wave wave)
     {
-        objectScaler.AdjustObjectPosition(wave.spawnPoint);
+        //objectScaler.AdjustObjectPosition(wave.spawnPoint);
 
         for (int i = 0; i < wave.enemyCount; i++)
         {
@@ -80,8 +80,8 @@ public class WaveSystem : MonoBehaviour
     {
         dialogueSystem.TriggerDialogueAtBoss();
         GameObject boss = Instantiate(bossPrefab, bossSpawnPoint.position, bossSpawnPoint.rotation);
-        objectScaler.AdjustObjectPosition(boss.transform); // Adjust boss position
-        objectScaler.AdjustObjectSize(boss); // Adjust boss size
+        //objectScaler.AdjustObjectPosition(boss.transform); // Adjust boss position
+        //objectScaler.AdjustObjectSize(boss); // Adjust boss size
         activeEnemies.Add(boss);
         yield return new WaitUntil(() => activeEnemies.Count == 0);
         Debug.Log("Boss defeated!");

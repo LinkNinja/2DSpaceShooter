@@ -9,6 +9,7 @@ public class Cannon : MonoBehaviour
     public float fireRate = 1f;
     private float nextFireTime = 0f;
     public GameObject explosionPrefab; // Reference to the explosion prefab
+    public Animator animator;
 
     void Update()
     {
@@ -17,6 +18,12 @@ public class Cannon : MonoBehaviour
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;
         }
+    }
+
+    private void Start()
+    {
+        // Initialize the Animator component
+        animator = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +47,8 @@ public class Cannon : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        // Trigger the damage animation
+        animator.SetTrigger("TakeDamage");
         if (health <= 0)
         {
             Instantiate(explosionPrefab, transform.position, transform.rotation); // Create the explosion

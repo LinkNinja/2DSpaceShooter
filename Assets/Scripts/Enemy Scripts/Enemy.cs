@@ -8,6 +8,13 @@ public class Enemy : MonoBehaviour
     public GameObject explosionPrefab; // Reference to the explosion prefab
     public int scoreValue = 100; // Points for destroying enemy.
     public EnemyDropFragments enemyDropFragments;
+    public Animator animator;
+
+    private void Start()
+    {
+        // Initialize the Animator component
+        animator = GetComponent<Animator>();
+    }
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -32,6 +39,8 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(damage);
         health -= damage;
+        // Trigger the damage animation
+        animator.SetTrigger("TakeDamage");
         if (health <= 0)
         {
             DestroyEnemy();

@@ -11,7 +11,8 @@ public class UpdatedBoss : MonoBehaviour
     private bool movingUp = true;
     private bool phaseTwo = false;
     private bool canTakeDamage = false;
-    
+    public Animator animator;
+
 
 
     void Update()
@@ -24,6 +25,11 @@ public class UpdatedBoss : MonoBehaviour
             phaseTwo = true;
             StartCoroutine(EnterPhaseTwo());
         }
+    }
+    private void Start()
+    {
+        // Initialize the Animator component
+        animator = GetComponent<Animator>();
     }
 
     void Move()
@@ -93,6 +99,8 @@ public class UpdatedBoss : MonoBehaviour
     {
         if (canTakeDamage)
         {
+            // Trigger the damage animation
+            animator.SetTrigger("TakeDamage");
             health -= damage;
             if (health <= 0)
             {
