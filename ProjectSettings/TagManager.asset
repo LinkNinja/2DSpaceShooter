@@ -11,6 +11,7 @@ TagManager:
   - BulletPattern
   - PlayerBullet
   - ChargedBullet
+  - ChargedLaser
   layers:
   - Default
   - TransparentFX
