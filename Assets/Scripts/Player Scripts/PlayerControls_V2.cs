@@ -101,6 +101,15 @@ public class PlayerControls_V2 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        //Take damage from charged laser
+        if (other.CompareTag("ChargedLaser")){
+            ChargedLaser laser = other.GetComponent<ChargedLaser>();
+            TakeDamage(laser.damage);
+        }
+        
+            
+        
         if (other.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
