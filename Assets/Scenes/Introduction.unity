@@ -619,12 +619,12 @@ MonoBehaviour:
 
 
     However, the Emperium has
-    devised a sinister trap to cut of the capital world of Atreus from the rest of
-    the galaxy and force them into submission.
+    devised a sinister trap to cut off the capital world of Atreus from the rest
+    of the galaxy and force them into submission.
 
 
-    Above the planet of Atreus a
-    Rookie pilot take his first flight on patrol...'
+    Above the planet of Atreus
+    a Rookie pilot take his first flight on patrol...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

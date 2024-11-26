@@ -6570,18 +6570,18 @@ MonoBehaviour:
   - portraitObject: {fileID: 415517671}
   typingSpeed: 0.02
   startDialogueLines:
-  - text: ....Thats strange. I wonder why their are so many Federation ships here
-      for the peace treaty.
+  - text: ....Thats strange. I wonder why their are so many Emperium ships here for
+      the peace treaty.
     characterIndex: 0
     animationState: PlayerSpeaking
   - text: I though both sides agreed to not arrive in force as a show of good faith.
     characterIndex: 0
     animationState: PlayerSpeaking
-  - text: This is Lieutenant Castle of The United Space Force.
+  - text: This is Lieutenant Castle of Principality of Atreus.
     characterIndex: 1
     animationState: Mentor
-  - text: The Federation has set a trap. All fighters engage the enemy and punch
-      a whole through the south west quadrant.
+  - text: The Emperium has set a trap. All escort fighters engage their forces in
+      the southwest quadrant.
     characterIndex: 1
     animationState: Mentor
   - text: We need to make a gap to allow our Capital ships to engage their warp core.
