@@ -13,8 +13,6 @@ public class UpdatedBoss : MonoBehaviour
     private bool canTakeDamage = false;
     public Animator animator;
 
-
-
     void Update()
     {
         Move();
@@ -26,6 +24,7 @@ public class UpdatedBoss : MonoBehaviour
             StartCoroutine(EnterPhaseTwo());
         }
     }
+
     private void Start()
     {
         // Initialize the Animator component
@@ -72,14 +71,19 @@ public class UpdatedBoss : MonoBehaviour
         canTakeDamage = true; // Boss can now take damage
         while (health > 0)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(5f);
             ShootLaser();
         }
     }
 
     void ShootLaser()
     {
-        Instantiate(laserPrefab, laserSpawnPoint.position, laserSpawnPoint.rotation);
+        GameObject laser = Instantiate(laserPrefab, laserSpawnPoint.position, laserSpawnPoint.rotation);
+        ChargedLaser chargedLaser = laser.GetComponent<ChargedLaser>();
+        if (chargedLaser != null)
+        {
+            chargedLaser.Initialize(transform, laserSpawnPoint.position); // Pass the boss's transform and the spawn point to the laser
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -113,7 +117,6 @@ public class UpdatedBoss : MonoBehaviour
     {
         // Notify wave manager (or similar) that the enemy has been destroyed
         WaveSystem waveSystem = FindObjectOfType<WaveSystem>();
-        
 
         // Boss death logic
         Destroy(gameObject);
