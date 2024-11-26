@@ -28,17 +28,25 @@ public class ModuleManager : MonoBehaviour
     // Inside ModuleManager.cs
     public void CollectFragment(ModuleType moduleType)
     {
-        fragmentCounts[moduleType]++;
-        Debug.Log("Collected " + moduleType + " fragment. Total: " + fragmentCounts[moduleType]);
 
-        if (fragmentCounts[moduleType] >= fragmentRequirements[moduleType])
+        if(fragmentCounts[moduleType] < fragmentRequirements[moduleType])
         {
-            AssembleModule(moduleType);
+
+            fragmentCounts[moduleType]++;
+            Debug.Log("Collected " + moduleType + " fragment. Total: " + fragmentCounts[moduleType]);
+
+            if (fragmentCounts[moduleType] >= fragmentRequirements[moduleType])
+            {
+                AssembleModule(moduleType);
+            }
+
+            // Update UI
+            FindObjectOfType<FragmentUIManager>().UpdateUI();
         }
 
-        // Update UI
-        FindObjectOfType<FragmentUIManager>().UpdateUI();
+        
     }
+
 
 
     private int GetFragmentRequirement(ModuleType moduleType)
@@ -47,8 +55,8 @@ public class ModuleManager : MonoBehaviour
         {
             case ModuleType.Speed:
                 return 3;
-            case ModuleType.Shield:
-                return 3;
+            case ModuleType.Shield:           
+                return 5;
             case ModuleType.Fire:
                 return 3;
             case ModuleType.Missile:
@@ -64,11 +72,14 @@ public class ModuleManager : MonoBehaviour
 
     private void AssembleModule(ModuleType moduleType)
     {
-        fragmentCounts[moduleType] = 0; // Reset fragment count after assembly
+    
+        //fragmentCounts[moduleType] = 0; // Reset fragment count after assembly
         moduleAssembled[moduleType] = true; // Mark module as assembled
         Debug.Log(moduleType + " module assembled!");
     }
 
+
+    //Public Function for the UI to get the fragment count.
     public int GetFragmentCount(ModuleType moduleType)
     {
         return fragmentCounts[moduleType];
@@ -84,6 +95,7 @@ public class ModuleManager : MonoBehaviour
         if (moduleAssembled[moduleType])
         {
             moduleAssembled[moduleType] = false; // Mark module as used
+            fragmentCounts[moduleType] = 0; // Reset fragment count after assembly
             Debug.Log(moduleType + " module used!");
             ActivateModule(moduleType);
         }
