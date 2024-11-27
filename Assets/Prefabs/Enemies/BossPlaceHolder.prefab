@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76529ec4f0bb6914da52690d7ccc86fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   laserPrefab: {fileID: 6012671189291686, guid: df4c3a472dfade548bb39e607f2aeae8,
     type: 3}
   laserSpawnPoint: {fileID: 3929679813026895246}
@@ -180,6 +180,7 @@ MonoBehaviour:
   - {fileID: 3929679813113113845}
   moveSpeed: 2
   animator: {fileID: 1263567134}
+  chargeTime: 2
 --- !u!95 &1263567134
 Animator:
   serializedVersion: 3
