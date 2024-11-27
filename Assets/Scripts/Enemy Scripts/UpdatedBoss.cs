@@ -12,6 +12,7 @@ public class UpdatedBoss : MonoBehaviour
     private bool phaseTwo = false;
     private bool canTakeDamage = false;
     public Animator animator;
+    public float chargeTime = 2.0f; // Time before firing the laser
 
     void Update()
     {
@@ -72,12 +73,20 @@ public class UpdatedBoss : MonoBehaviour
         while (health > 0)
         {
             yield return new WaitForSeconds(5f);
-            ShootLaser();
+            StartCoroutine(ShootLaserWithCharge());
         }
     }
 
-    void ShootLaser()
+    IEnumerator ShootLaserWithCharge()
     {
+        // Start the charging animation
+        animator.SetBool("isCharging", true);
+
+        // Wait for the charge time
+        yield return new WaitForSeconds(chargeTime);
+
+        // Stop the charging animation and shoot the laser
+        animator.SetBool("isCharging", false);
         GameObject laser = Instantiate(laserPrefab, laserSpawnPoint.position, laserSpawnPoint.rotation);
         ChargedLaser chargedLaser = laser.GetComponent<ChargedLaser>();
         if (chargedLaser != null)
