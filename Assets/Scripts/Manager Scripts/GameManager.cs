@@ -67,8 +67,9 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         currentState = GameState.Playing;
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Controller Update");
         playerLives = 3;
         playerScore = 0;
         UpdateLivesUI();

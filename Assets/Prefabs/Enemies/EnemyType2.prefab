@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b80b01483eb7141bd9673ed931951e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 15
   canBeDestroyedOnCollision: 1
   collisionDamage: 20
   explosionPrefab: {fileID: 2632983710684232460, guid: d1ebbe24e1c8f50499e8480e6302264c,
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3512388a0c18e614f8bbcbd7a97b6df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diagonalSpeed: 6
-  chaseSpeed: 9
+  diagonalSpeed: 4
+  chaseSpeed: 8
 --- !u!95 &1174147328
 Animator:
   serializedVersion: 3

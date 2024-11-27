@@ -22,7 +22,7 @@ public class PlayerControls_V2 : MonoBehaviour
     private ModuleManager moduleManager;
     private CombinedModules combinedModules;
     private GameManager gameManager; 
-    public ObjectScaler objectScaler;
+    //public ObjectScaler objectScaler;
     public GameObject player;
     public Animator animator;
 
@@ -39,8 +39,8 @@ public class PlayerControls_V2 : MonoBehaviour
 
         // Get reference to the GameManager
         gameManager = FindObjectOfType<GameManager>();
-        objectScaler.AdjustObjectPosition(transform);
-        objectScaler.AdjustObjectSize(player);
+        //objectScaler.AdjustObjectPosition(transform);
+        //objectScaler.AdjustObjectSize(player);
         // Initialize the Animator component
         animator = GetComponent<Animator>(); 
     }

@@ -16,7 +16,7 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (gameManager.currentState == GameManager.GameState.GameOver)
+            if (gameManager.currentState == GameManager.GameState.GameOver || gameManager.currentState == GameManager.GameState.Dialogue)
             {
                 // Do not allow pausing when the game is over
                 return;
