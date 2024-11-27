@@ -58,7 +58,7 @@ public class EnemyBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D target)
     {
 
-        if (target.tag == "Player" || target.tag == "PlayerBullet")
+        if (target.tag == "Player")
         {
 
 
