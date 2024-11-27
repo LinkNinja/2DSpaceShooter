@@ -20,6 +20,7 @@ public class ShipGun : MonoBehaviour
         // Get reference to the GameManager
         gameManager = FindObjectOfType<GameManager>();
     }
+
     void Update()
     {
         Timer();
@@ -27,11 +28,10 @@ public class ShipGun : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        if (gameManager.currentState == GameManager.GameState.Paused)
-        {
-            return;
-        }
-        if (gameManager.currentState == GameManager.GameState.GameOver)
+        // Prevent shooting if the game is paused, game over, or in dialogue state
+        if (gameManager.currentState == GameManager.GameState.Paused
+            || gameManager.currentState == GameManager.GameState.GameOver
+            || gameManager.currentState == GameManager.GameState.Dialogue)
         {
             return;
         }

@@ -87,10 +87,6 @@ public class PlayerControls_V2 : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        // Update code as needed
-    }
 
     // Unity Event that's called on the new input system
     public void Move(InputAction.CallbackContext context)
@@ -120,12 +116,14 @@ public class PlayerControls_V2 : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
-                TakeDamage(enemy.collisionDamage); // Apply damage to player        
+                // Apply damage to player
+                TakeDamage(enemy.collisionDamage);         
                 if (enemy.canBeDestroyedOnCollision)
                 {
 
                     //Need to notify the wave system that the enemy has been destroyed from crashing into the player.
-                    Destroy(other.gameObject); // Destroy the enemy
+                    // Destroy the enemy
+                    Destroy(other.gameObject); 
                     // Notify wave manager that the enemy has been destroyed
                     WaveSystem waveSystem = FindObjectOfType<WaveSystem>();
                     if (waveSystem != null)
@@ -148,14 +146,16 @@ public class PlayerControls_V2 : MonoBehaviour
 
         if (currentShield <= 0)
         {
-            Instantiate(explosionPrefab, transform.position, transform.rotation); // Create the explosion
+            // Explostion prefab
+            Instantiate(explosionPrefab, transform.position, transform.rotation); 
             LoseLife();
         }
     }
 
     void LoseLife()
     {
-        gameManager.LoseLife(); // Call GameManager's LoseLife method
+        // Call GameManager's LoseLife function
+        gameManager.LoseLife(); 
 
         if (gameManager.playerLives > 0)
         {

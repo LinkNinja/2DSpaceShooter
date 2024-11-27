@@ -3,13 +3,13 @@
 public class PauseManager : MonoBehaviour
 {
     private GameManager gameManager;
-    public GameObject pauseScreenUI; // Reference to the Pause Screen UI
+    public GameObject pauseScreenUI; 
     private bool isPaused = false;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        pauseScreenUI.SetActive(false); // Ensure the pause screen is initially hidden
+        pauseScreenUI.SetActive(false); 
     }
 
     void Update()
@@ -35,16 +35,17 @@ public class PauseManager : MonoBehaviour
 
     void PauseGame()
     {
+
         isPaused = true;
-        pauseScreenUI.SetActive(true); // Show the pause screen
+        pauseScreenUI.SetActive(true); 
         Time.timeScale = 0;
         gameManager.PauseGame();
     }
 
     void ResumeGame()
     {
-        isPaused = false;
-        pauseScreenUI.SetActive(false); // Hide the pause screen
+        isPaused = false;      
+        pauseScreenUI.SetActive(false); 
         Time.timeScale = 1;
         gameManager.ResumeGame();
     }

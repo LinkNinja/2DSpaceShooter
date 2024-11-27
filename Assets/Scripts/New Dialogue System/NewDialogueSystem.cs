@@ -29,8 +29,11 @@ public class NewDialogueSystem : MonoBehaviour
         public GameObject portraitObject;
     }
 
-    public List<DialogueLine> startDialogueLines;  // Store initial dialogue lines
-    public List<DialogueLine> bossDialogueLines;   // Store boss dialogue lines
+    // Store initial dialogue lines
+    public List<DialogueLine> startDialogueLines;  
+
+    // Store boss dialogue lines
+    public List<DialogueLine> bossDialogueLines;   
 
     private List<DialogueLine> dialogueLines;
     private int currentLineIndex = 0;
@@ -65,6 +68,10 @@ public class NewDialogueSystem : MonoBehaviour
         currentLineIndex = 0;
         controls.SetActive(false);
         spaceBar.SetActive(true);
+
+        // Notify GameManager to switch to Dialogue state
+        GameManager.Instance.StartDialogue();
+
         DisplayNextLine();
     }
 
@@ -78,17 +85,14 @@ public class NewDialogueSystem : MonoBehaviour
         }
         else
         {
-            dialogueText.text = "";
-            Time.timeScale = 1f;
-            controls.SetActive(true);
-            spaceBar.SetActive(false);
-            HideAllPortraits(); // Hide portraits once the dialogue is finished
+            EndDialogue();
         }
     }
 
     IEnumerator TypeDialogue(string dialogue, int characterIndex, string animationState)
     {
-        if (currentLineIndex > 1) // Ensure it's not the first line
+        // Check it's not the first line
+        if (currentLineIndex > 1) 
         {
             characters[dialogueLines[currentLineIndex - 2].characterIndex].portraitObject.SetActive(false);
         }
@@ -129,13 +133,25 @@ public class NewDialogueSystem : MonoBehaviour
 
     public void TriggerDialogueAtStart()
     {
-        Time.timeScale = 0f;
         StartDialogue(startDialogueLines);
     }
 
     public void TriggerDialogueAtBoss()
     {
-        Time.timeScale = 0f;
         StartDialogue(bossDialogueLines);
+    }
+
+    private void EndDialogue()
+    {
+        dialogueText.text = "";
+        // Show Controls
+        controls.SetActive(true);
+        // Hide Spacebar key
+        spaceBar.SetActive(false);
+        // Hide portraits once the dialogue is finished
+        HideAllPortraits(); 
+
+        // Notify GameManager to switch back to Playing state
+        GameManager.Instance.EndDialogue();
     }
 }

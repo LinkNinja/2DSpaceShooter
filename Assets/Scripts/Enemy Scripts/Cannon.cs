@@ -3,12 +3,12 @@
 public class Cannon : MonoBehaviour
 {
     public int health = 100;
-    public UpdatedBoss boss; // Reference to the boss
+    public UpdatedBoss boss;
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float fireRate = 1f;
     private float nextFireTime = 0f;
-    public GameObject explosionPrefab; // Reference to the explosion prefab
+    public GameObject explosionPrefab; 
     public Animator animator;
 
     void Update()
@@ -34,7 +34,8 @@ public class Cannon : MonoBehaviour
             if (bullet != null)
             {
                 TakeDamage(bullet.damage);
-                Destroy(other.gameObject); // Destroy the bullet on impact
+                // Destroy the bullet
+                Destroy(other.gameObject); 
             }
         }
     }
@@ -51,7 +52,7 @@ public class Cannon : MonoBehaviour
         animator.SetTrigger("TakeDamage");
         if (health <= 0)
         {
-            Instantiate(explosionPrefab, transform.position, transform.rotation); // Create the explosion
+            Instantiate(explosionPrefab, transform.position, transform.rotation);
             DestroyCannon();
         }
     }
@@ -59,6 +60,6 @@ public class Cannon : MonoBehaviour
     void DestroyCannon()
     {
         Destroy(gameObject);
-        // Notify the boss that this cannon is destroyed (if needed)
+        
     }
 }

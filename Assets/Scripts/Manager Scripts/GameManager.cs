@@ -4,28 +4,48 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public enum GameState { Playing, Paused, GameOver }
+
+    // Singleton
+    public static GameManager Instance; 
+
+    public enum GameState { Playing, Paused, Dialogue, GameOver }
     public GameState currentState;
     public int playerLives = 3;
     public int playerScore = 0;
 
-    public TMP_Text livesText; // Reference to the TextMeshPro UI element
-    public TMP_Text scoreText; // Reference to the TextMeshPro UI element for score
-    public GameObject gameOverScreenUI; // Reference to the Game Over screen UI
+    public TMP_Text livesText; 
+    public TMP_Text scoreText; 
+    public GameObject gameOverScreenUI;
+
+    void Awake()
+    {
+        // Implement singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
         currentState = GameState.Playing;
         Time.timeScale = 1;
 
+        // Update the Lives UI at the start
         UpdateLivesUI();
-        UpdateScoreUI(); // Update the score UI at the start
-        gameOverScreenUI.SetActive(false); // Ensure the Game Over screen is initially hidden
+        // Update the score UI at the start
+        UpdateScoreUI(); 
+        // Ensure the Game Over screen is initially hidden
+        gameOverScreenUI.SetActive(false); 
     }
 
     void FixedUpdate()
     {
-      
         if (playerLives <= 0)
         {
             currentState = GameState.GameOver;
@@ -47,20 +67,33 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         currentState = GameState.Playing;
-        playerLives = 3;  // Adjust if needed
-        playerScore = 0;  // Adjust if needed
+        playerLives = 3;
+        playerScore = 0;
         UpdateLivesUI();
-        UpdateScoreUI(); // Reset the score UI
+        UpdateScoreUI();
+    }
+
+    public void StartDialogue()
+    {
+        currentState = GameState.Dialogue;
+        Time.timeScale = 0;
+    }
+
+    public void EndDialogue()
+    {
+        currentState = GameState.Playing;
+        // Resume the game
+        Time.timeScale = 1; 
     }
 
     void HandleGameOver()
     {
         Debug.Log("Game Over");
         Time.timeScale = 0;
-        gameOverScreenUI.SetActive(true); // Show the Game Over screen
+        // Show the Game Over screen
+        gameOverScreenUI.SetActive(true); 
     }
 
     public void LoseLife()
@@ -72,7 +105,8 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points)
     {
         playerScore += points;
-        UpdateScoreUI(); // Update the score UI when points are added
+        // Update the score UI
+        UpdateScoreUI(); 
     }
 
     void UpdateLivesUI()
@@ -93,9 +127,8 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-
         Debug.Log("Returning to Main Menu");
         Time.timeScale = 1;
-        SceneManager.LoadScene("TitleScreen"); // Replace "MainMenu" with your actual main menu scene name
+        SceneManager.LoadScene("TitleScreen");
     }
 }

@@ -2,10 +2,10 @@
 
 public class ChargedLaser : MonoBehaviour
 {
-    public Transform bossTransform; // Reference to the boss's transform
-    public Vector3 offset; // Offset to position the laser correctly relative to the boss
-    public float duration = .1f; // Duration the laser will last
-    public int damage = 20; // Damage caused by the laser
+    public Transform bossTransform; 
+    public Vector3 offset; 
+    public float duration = .1f; 
+    public int damage = 20; 
 
     void Start()
     {
@@ -27,7 +27,8 @@ public class ChargedLaser : MonoBehaviour
         bossTransform = boss;
         // Set the initial offset based on the current positions of the boss and laser spawn point
         offset = transform.position - bossTransform.position;
-        transform.position = spawnPoint; // Set the initial position to the spawn point
+        // Set the initial position to the spawn point
+        transform.position = spawnPoint; 
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -69,7 +69,7 @@ public class CombinedModules : MonoBehaviour
 
         player.originalDamage *= 2;
         yield return new WaitForSeconds(fireDuration);
-        player.originalDamage = 10; // Reset to original damage
+        player.originalDamage = 10;
     }
 
     public IEnumerator ActivateMissile()
@@ -93,6 +93,6 @@ public class CombinedModules : MonoBehaviour
         if (player == null) yield break;
 
         player.currentShield = player.maxShield;
-        yield return null; // Health module doesn't need a duration
+        yield return null; 
     }
 }

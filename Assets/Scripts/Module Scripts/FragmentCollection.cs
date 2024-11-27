@@ -3,8 +3,10 @@
 public class FragmentCollection : MonoBehaviour
 {
     public ModuleManager.ModuleType fragmentType;
-    public float attractionRange = 5f; // Range at which fragments start moving towards the player
-    public float attractionSpeed = 5f; // Speed at which the fragments move towards the player
+    // Range at which fragments start moving towards the player
+    public float attractionRange = 5f;
+    // Speed at which the fragments move towards the player
+    public float attractionSpeed = 5f; 
 
     private Transform playerTransform;
     private bool attractToPlayer = false;

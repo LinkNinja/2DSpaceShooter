@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObjectScaler : MonoBehaviour
 {
-    private Vector2 referenceResolution = new Vector2(1920, 1080); // Reference resolution
+    // Reference resolution
+    private Vector2 referenceResolution = new Vector2(1920, 1080); 
 
     public void AdjustObjectSize(GameObject obj)
     {
