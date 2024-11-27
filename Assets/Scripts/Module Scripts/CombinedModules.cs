@@ -3,14 +3,17 @@ using UnityEngine;
 
 public class CombinedModules : MonoBehaviour
 {
+
+
+
     public float speedDuration = 10f;
     public float shieldDuration = 1f;
     public float fireDuration = 10f;
     public float missileDuration = 10f;
     public float laserDuration = 10f;
-    public float healthDuration = 0f; // Health module doesn't need a duration
-    public GameObject shieldEffectPrefab; // Reference to the shield effect prefab
-    public GameObject speedTrailEffectPrefab; // Reference to the speed trail effect prefab
+    public float healthDuration = 0f; 
+    public GameObject shieldEffectPrefab; 
+    public GameObject speedTrailEffectPrefab;
 
 
 
@@ -24,7 +27,9 @@ public class CombinedModules : MonoBehaviour
     public IEnumerator ActivateSpeed()
     {
         if (player == null) yield break;
-        Vector3 offset = new Vector3(-1f, -0.1f, 0); // Adjust the offset as needed
+
+        // Adjust the offset as needed
+        Vector3 offset = new Vector3(-1f, -0.1f, 0);
         var speedTrailEffect = Instantiate(speedTrailEffectPrefab, player.transform.position + offset, Quaternion.identity, player.transform);
         speedTrailEffect.transform.parent = player.transform;
         FindObjectOfType<AudioManager>().Play("SpeedModule");

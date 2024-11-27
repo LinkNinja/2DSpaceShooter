@@ -6,13 +6,18 @@ public class UpdatedBoss : MonoBehaviour
     public int health = 1000;
     public GameObject laserPrefab;
     public Transform laserSpawnPoint;
-    public Cannon[] cannons; // Array to hold references to the cannons
+
+    // Array to hold references to the cannons
+    public Cannon[] cannons; 
     public float moveSpeed = 2f;
     private bool movingUp = true;
     private bool phaseTwo = false;
     private bool canTakeDamage = false;
+    private bool isChargingOrFiring = false; 
     public Animator animator;
-    public float chargeTime = 2.0f; // Time before firing the laser
+
+    // Time before firing the laser
+    public float chargeTime = 2.0f; 
 
     void Update()
     {
@@ -38,7 +43,8 @@ public class UpdatedBoss : MonoBehaviour
         if (movingUp)
         {
             transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-            if (transform.position.y >= 2.25) // Upper limit
+            // Upper limit
+            if (transform.position.y >= 2.25) 
             {
                 movingUp = false;
             }
@@ -46,7 +52,8 @@ public class UpdatedBoss : MonoBehaviour
         else
         {
             transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-            if (transform.position.y <= -0.25) // Lower limit
+            // Lower limit
+            if (transform.position.y <= 0) 
             {
                 movingUp = true;
             }
@@ -70,6 +77,7 @@ public class UpdatedBoss : MonoBehaviour
         // Phase 2 logic
         moveSpeed *= 1.5f;
         canTakeDamage = true; // Boss can now take damage
+        StartCoroutine(ShootLaserWithCharge());
         while (health > 0)
         {
             yield return new WaitForSeconds(5f);
@@ -79,6 +87,9 @@ public class UpdatedBoss : MonoBehaviour
 
     IEnumerator ShootLaserWithCharge()
     {
+        // Indicate the boss is charging or firing
+        isChargingOrFiring = true;
+
         // Start the charging animation
         animator.SetBool("isCharging", true);
 
@@ -91,26 +102,34 @@ public class UpdatedBoss : MonoBehaviour
         ChargedLaser chargedLaser = laser.GetComponent<ChargedLaser>();
         if (chargedLaser != null)
         {
-            chargedLaser.Initialize(transform, laserSpawnPoint.position); // Pass the boss's transform and the spawn point to the laser
+            // Pass the boss's transform and the spawn point to the laser
+            chargedLaser.Initialize(transform, laserSpawnPoint.position); 
         }
+
+        // Wait for a short duration if you want the boss to remain invulnerable while the laser is active
+        yield return new WaitForSeconds(1.0f); // Adjust the time as needed
+
+        // Indicate the boss has finished charging and firing
+        isChargingOrFiring = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (canTakeDamage && other.CompareTag("PlayerBullet"))
+        if (canTakeDamage && !isChargingOrFiring && other.CompareTag("PlayerBullet"))
         {
             Player_Projectile bullet = other.GetComponent<Player_Projectile>();
             if (bullet != null)
             {
                 TakeDamage(bullet.damage);
-                Destroy(other.gameObject); // Destroy the bullet on impact
+                // Destroy the bullet on impact
+                Destroy(other.gameObject); 
             }
         }
     }
 
     public void TakeDamage(int damage)
     {
-        if (canTakeDamage)
+        if (canTakeDamage && !isChargingOrFiring)
         {
             // Trigger the damage animation
             animator.SetTrigger("TakeDamage");

@@ -11,9 +11,7 @@ public class EnemyBullet : MonoBehaviour
     public bool isEnemyBullet = false;
     public int damage = 25;
 
-    
-
-
+   
     void Start()
     {
         //Enemt Bullet Speed

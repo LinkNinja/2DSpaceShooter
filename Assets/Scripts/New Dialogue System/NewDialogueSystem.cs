@@ -13,6 +13,7 @@ public class NewDialogueSystem : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool isTyping = false;
     public GameObject spaceBar;
+    public GameObject controls;
 
     [System.Serializable]
     public class DialogueLine
@@ -38,6 +39,7 @@ public class NewDialogueSystem : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         HideAllPortraits();
+        controls.SetActive(true);
     }
 
     private void Update()
@@ -61,6 +63,7 @@ public class NewDialogueSystem : MonoBehaviour
     {
         dialogueLines = lines;
         currentLineIndex = 0;
+        controls.SetActive(false);
         spaceBar.SetActive(true);
         DisplayNextLine();
     }
@@ -77,6 +80,7 @@ public class NewDialogueSystem : MonoBehaviour
         {
             dialogueText.text = "";
             Time.timeScale = 1f;
+            controls.SetActive(true);
             spaceBar.SetActive(false);
             HideAllPortraits(); // Hide portraits once the dialogue is finished
         }

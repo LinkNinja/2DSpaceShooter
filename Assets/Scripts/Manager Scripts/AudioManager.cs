@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
         
 
 
-        //
+        
         //In this for loop you can Add additional properties of the audio source if needed. Such as priority, stereo pan, etc.
         foreach (Sound s in sounds)
         {
