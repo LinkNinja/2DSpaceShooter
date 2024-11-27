@@ -107,7 +107,12 @@ public class PlayerControls_V2 : MonoBehaviour
             ChargedLaser laser = other.GetComponent<ChargedLaser>();
             TakeDamage(laser.damage);
         }
-        
+
+        if (other.CompareTag("Bullet"))
+        {
+            EnemyBullet enemyBullet = other.GetComponent<EnemyBullet>();
+            TakeDamage(enemyBullet.damage);
+        }
             
         
         if (other.CompareTag("Enemy"))
@@ -115,7 +120,7 @@ public class PlayerControls_V2 : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
-                TakeDamage(enemy.collisionDamage); // Apply damage to player
+                TakeDamage(enemy.collisionDamage); // Apply damage to player        
                 if (enemy.canBeDestroyedOnCollision)
                 {
 

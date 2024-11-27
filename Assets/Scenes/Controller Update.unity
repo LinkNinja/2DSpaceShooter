@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  playerLives: 1
+  playerLives: 3
   playerScore: 0
   livesText: {fileID: 1265741553}
   scoreText: {fileID: 1619130511}

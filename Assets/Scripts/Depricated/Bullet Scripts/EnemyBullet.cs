@@ -9,6 +9,7 @@ public class EnemyBullet : MonoBehaviour
     public float enemySpeed = 5f;
     public float deactivateTimer = 3f;
     public bool isEnemyBullet = false;
+    public int damage = 25;
 
     
 
