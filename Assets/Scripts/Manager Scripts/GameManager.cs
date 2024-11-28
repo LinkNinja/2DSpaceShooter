@@ -1,34 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-
-    // Singleton
-    public static GameManager Instance; 
-
     public enum GameState { Playing, Paused, Dialogue, GameOver }
     public GameState currentState;
     public int playerLives = 3;
     public int playerScore = 0;
 
-    public TMP_Text livesText; 
-    public TMP_Text scoreText; 
+    public TMP_Text livesText;
+    public TMP_Text scoreText;
     public GameObject gameOverScreenUI;
 
     void Awake()
     {
-        // Implement singleton pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // No singleton implementation
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -39,9 +28,9 @@ public class GameManager : MonoBehaviour
         // Update the Lives UI at the start
         UpdateLivesUI();
         // Update the score UI at the start
-        UpdateScoreUI(); 
+        UpdateScoreUI();
         // Ensure the Game Over screen is initially hidden
-        gameOverScreenUI.SetActive(false); 
+        gameOverScreenUI.SetActive(false);
     }
 
     void FixedUpdate()
@@ -67,9 +56,16 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        // Ensure the new instance handles everything from scratch
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(ResetGameAfterRestart());
+    }
+
+    private IEnumerator ResetGameAfterRestart()
+    {
+        yield return new WaitForEndOfFrame(); // Wait for the scene to reload
         currentState = GameState.Playing;
         Time.timeScale = 1;
-        SceneManager.LoadScene("Controller Update");
         playerLives = 3;
         playerScore = 0;
         UpdateLivesUI();
@@ -85,16 +81,14 @@ public class GameManager : MonoBehaviour
     public void EndDialogue()
     {
         currentState = GameState.Playing;
-        // Resume the game
-        Time.timeScale = 1; 
+        Time.timeScale = 1;
     }
 
     void HandleGameOver()
     {
         Debug.Log("Game Over");
         Time.timeScale = 0;
-        // Show the Game Over screen
-        gameOverScreenUI.SetActive(true); 
+        gameOverScreenUI.SetActive(true);
     }
 
     public void LoseLife()
@@ -106,8 +100,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points)
     {
         playerScore += points;
-        // Update the score UI
-        UpdateScoreUI(); 
+        UpdateScoreUI();
     }
 
     void UpdateLivesUI()

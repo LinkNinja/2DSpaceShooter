@@ -14,6 +14,7 @@ public class NewDialogueSystem : MonoBehaviour
     private bool isTyping = false;
     public GameObject spaceBar;
     public GameObject controls;
+    public GameManager gameManager;
 
     [System.Serializable]
     public class DialogueLine
@@ -70,7 +71,7 @@ public class NewDialogueSystem : MonoBehaviour
         spaceBar.SetActive(true);
 
         // Notify GameManager to switch to Dialogue state
-        GameManager.Instance.StartDialogue();
+        gameManager.StartDialogue();
 
         DisplayNextLine();
     }
@@ -149,9 +150,9 @@ public class NewDialogueSystem : MonoBehaviour
         // Hide Spacebar key
         spaceBar.SetActive(false);
         // Hide portraits once the dialogue is finished
-        HideAllPortraits(); 
+        HideAllPortraits();
 
         // Notify GameManager to switch back to Playing state
-        GameManager.Instance.EndDialogue();
+        gameManager.EndDialogue();
     }
 }

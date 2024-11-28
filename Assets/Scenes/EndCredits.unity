@@ -610,13 +610,6 @@ MonoBehaviour:
   m_text: '<align=center><size=70>Credits</size></align>
 
 
-
-    <align=center><size=40>Project
-    Manager</size></align>
-
-    <align=center><size=30>Rafael Castillo</size></align>
-
-
     <align=center><size=40>Programmer</size></align>
 
     <align=center><size=30>Rafael
@@ -760,7 +753,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: c57d9382c54313d45b06ca5df7d1a7f6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
