@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        // No singleton implementation
+        // No singleton implementation for now
         DontDestroyOnLoad(gameObject);
     }
 
