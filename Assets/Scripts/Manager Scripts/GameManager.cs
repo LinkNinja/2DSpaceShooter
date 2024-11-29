@@ -105,12 +105,12 @@ public class GameManager : MonoBehaviour
 
     void UpdateLivesUI()
     {
-        livesText.text = "Lives: " + playerLives;
+        livesText.text = "Lives:\n" + playerLives;
     }
 
     void UpdateScoreUI()
     {
-        scoreText.text = "Score: " + playerScore;
+        scoreText.text = "Score:\n" + playerScore;
     }
 
     public void QuitGame()
