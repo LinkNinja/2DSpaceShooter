@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         // No singleton implementation for now
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Start()
