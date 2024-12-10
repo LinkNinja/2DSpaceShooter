@@ -45,14 +45,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: ShootSmallProjectile
-    clip: {fileID: 8300000, guid: e407b8466d0819f4cbcfc9e3dbdbe35a, type: 3}
-    volume: 0.825
-    pitch: 1.29
+    clip: {fileID: 8300000, guid: 45ac5533c9f2cf64c87b9a40a7525288, type: 3}
+    volume: 0.25
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ShootLargeProjectile
     clip: {fileID: 8300000, guid: e9e4d0fc9bf279e4ebfa80849e65b5eb, type: 3}
-    volume: 0.825
+    volume: 0.25
     pitch: 1.29
     loop: 0
+    source: {fileID: 0}
+  - name: EnemyDead
+    clip: {fileID: 8300000, guid: acc496e9f46d4c149ad7d1cc83385b61, type: 3}
+    volume: 0.25
+    pitch: 1.29
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldRecharge
+    clip: {fileID: 8300000, guid: ab68edafeed0fed4a90acd2fccd1ed22, type: 3}
+    volume: 0.25
+    pitch: 1.29
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: cea6f68d3456c024aa6cc81acfba7c42, type: 3}
+    volume: 0.25
+    pitch: 1.29
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerHit
+    clip: {fileID: 8300000, guid: 9f79d759e08b9b64db080bd318582c0f, type: 3}
+    volume: 0.25
+    pitch: 1.29
+    loop: 0
+    source: {fileID: 0}
+  - name: SpeedModule
+    clip: {fileID: 8300000, guid: cea6f68d3456c024aa6cc81acfba7c42, type: 3}
+    volume: 0.25
+    pitch: 1.29
+    loop: 0
+    source: {fileID: 0}
+  - name: LevelMusic
+    clip: {fileID: 8300000, guid: ef669132335e8d248a35ea07e18464bb, type: 3}
+    volume: 0.25
+    pitch: 1.29
+    loop: 1
+    source: {fileID: 0}
+  - name: DialogueSound
+    clip: {fileID: 8300000, guid: 9097d1fc8fc389a449ac555e1b1b8c45, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
     source: {fileID: 0}

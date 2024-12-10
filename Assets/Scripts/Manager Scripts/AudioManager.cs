@@ -7,13 +7,14 @@ public class AudioManager : MonoBehaviour
 
 
     public Sound[] sounds;
-    public static AudioManager instance;
+    public static AudioManager Instance { get; private set; }
 
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -21,10 +22,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
-
         
-
 
         
         //In this for loop you can Add additional properties of the audio source if needed. Such as priority, stereo pan, etc.

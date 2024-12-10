@@ -69,7 +69,8 @@ public class ShipGun : MonoBehaviour
     void FireSmallProjectile()
     {
         Instantiate(projectile, firePoint.position, firePoint.rotation);
-        FindObjectOfType<AudioManager>().Play("ShootSmallProjectile");
+        //FindObjectOfType<AudioManager>().Play("ShootSmallProjectile");
+        AudioManager.Instance.Play("ShootSmallProjectile");
     }
 
     void FireChargedShot()
