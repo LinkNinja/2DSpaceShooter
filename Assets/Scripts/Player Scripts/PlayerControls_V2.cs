@@ -130,7 +130,8 @@ public class PlayerControls_V2 : MonoBehaviour
                     {
                         waveSystem.NotifyEnemyDestroyed(other.gameObject);
                     }
-                    FindObjectOfType<AudioManager>().Play("PlayerHit");
+                  
+                    AudioManager.Instance.Play("PlayerHit");
                 }
             }
         }
@@ -140,7 +141,7 @@ public class PlayerControls_V2 : MonoBehaviour
     {
         currentShield -= damage;
         shieldbar.value = currentShield;
-        FindObjectOfType<AudioManager>().Play("PlayerHit");
+        AudioManager.Instance.Play("PlayerHit");
         // Trigger the damage animation
         animator.SetTrigger("TakeDamage"); 
 

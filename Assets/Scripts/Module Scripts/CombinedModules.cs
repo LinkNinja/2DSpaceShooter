@@ -32,7 +32,7 @@ public class CombinedModules : MonoBehaviour
         Vector3 offset = new Vector3(-1f, -0.1f, 0);
         var speedTrailEffect = Instantiate(speedTrailEffectPrefab, player.transform.position + offset, Quaternion.identity, player.transform);
         speedTrailEffect.transform.parent = player.transform;
-        FindObjectOfType<AudioManager>().Play("SpeedModule");
+        AudioManager.Instance.Play("SpeedModule");
         player.speed *= 1.5f;
         yield return new WaitForSeconds(speedDuration);
         player.speed = player.originalSpeed;
@@ -50,7 +50,7 @@ public class CombinedModules : MonoBehaviour
         var shieldEffect = Instantiate(shieldEffectPrefab, player.transform.position + offset, Quaternion.identity, player.transform);
 
         //Play the Shield recharge sound from AudioManager
-        FindObjectOfType<AudioManager>().Play("ShieldRecharge");
+        AudioManager.Instance.Play("ShieldRecharge");
 
         // Restore Player Shields
         player.currentShield += 25; 

@@ -9,7 +9,6 @@ public class NewDialogueSystem : MonoBehaviour
     public List<CharacterDialogueData> characters;
     //public AudioClip typingSound;
     public float typingSpeed = 0.02f;
-    private AudioSource audioSource;
     private Coroutine typingCoroutine;
     private bool isTyping = false;
     public GameObject spaceBar;
@@ -41,7 +40,6 @@ public class NewDialogueSystem : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         HideAllPortraits();
         controls.SetActive(true);
     }
@@ -107,7 +105,8 @@ public class NewDialogueSystem : MonoBehaviour
         foreach (char letter in dialogue.ToCharArray())
         {
             dialogueText.text += letter;
-            FindObjectOfType<AudioManager>().Play("DialogueSound");
+            //FindObjectOfType<AudioManager>().Play("DialogueSound");
+            AudioManager.Instance.Play("DialogueSound");
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
         isTyping = false;
@@ -119,7 +118,8 @@ public class NewDialogueSystem : MonoBehaviour
     {
         var currentLine = dialogueLines[currentLineIndex - 1];
         dialogueText.text = currentLine.text;
-        FindObjectOfType<AudioManager>().Play("DialogueSound");
+        //FindObjectOfType<AudioManager>().Play("DialogueSound");
+        AudioManager.Instance.Play("DialogueSound");
         isTyping = false;
         StopAllCoroutines();
     }

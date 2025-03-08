@@ -10,9 +10,9 @@ public class Explosion : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        
+
         //Play Audio Clip
-        FindObjectOfType<AudioManager>().Play("Explosion");
+        AudioManager.Instance.Play("Explosion");
         
 
         StartCoroutine(DestroyAfterAnimation());

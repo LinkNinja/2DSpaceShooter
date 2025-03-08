@@ -121,6 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b80b01483eb7141bd9673ed931951e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health:
+    UseConstant: 1
+    ConstantValue: 10
+    Variable: {fileID: 11400000, guid: ccdf01681feb0f849aac1d3f9bda8aa8, type: 2}
   health: 15
   canBeDestroyedOnCollision: 1
   collisionDamage: 20

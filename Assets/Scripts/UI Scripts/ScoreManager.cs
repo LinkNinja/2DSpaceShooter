@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance;
+    //Singleton
+    public static ScoreManager Instance { get; private set; }
     public Text scoreText;
     private int score = 0;
 
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // Keep this object alive across scenes
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
