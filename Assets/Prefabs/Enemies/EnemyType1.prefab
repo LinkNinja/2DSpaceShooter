@@ -226,10 +226,6 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 20
     Variable: {fileID: 11400000, guid: ccdf01681feb0f849aac1d3f9bda8aa8, type: 2}
-  MaxHealth:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: ccdf01681feb0f849aac1d3f9bda8aa8, type: 2}
   health: 0
   canBeDestroyedOnCollision: 1
   collisionDamage: 5

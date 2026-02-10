@@ -10171,7 +10171,7 @@ MonoBehaviour:
     enemyCount: 5
     spawnRate: 2
     spawnPoint: {fileID: 645536291}
-  - enemyPrefab: {fileID: 4092563613886036918, guid: 7ba7dca1442d65945bbb5d7d2ed5d815,
+  - enemyPrefab: {fileID: 7457944280477702667, guid: 0cd49fce98c479c46af5243b09097e13,
       type: 3}
     enemyCount: 5
     spawnRate: 2
